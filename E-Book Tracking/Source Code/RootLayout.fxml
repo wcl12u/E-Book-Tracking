@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import application.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RootLayoutController">
+  <tabs>
+    <Tab fx:id="tabStudentEdit" closable="false" onSelectionChanged="#handleStudentView" text="Student Edit">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane layoutX="150.0" layoutY="110.0" prefHeight="369.6" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <bottom>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="btnPreviousStudent" mnemonicParsing="false" onAction="#handlePreviousStudent" prefHeight="65.0" prefWidth="95.0" text="Previous" />
+                              <Button fx:id="btnNewStudent" mnemonicParsing="false" onAction="#handleNewStudent" prefHeight="65.0" prefWidth="95.0" text="New" />
+                              <Button fx:id="btnDeleteStudent" mnemonicParsing="false" onAction="#handleDeleteStudent" prefHeight="65.0" prefWidth="95.0" text="Delete" />
+                              <Button fx:id="btnSaveStudent" mnemonicParsing="false" onAction="#handleSaveStudent" prefHeight="65.0" prefWidth="95.0" text="Save" />
+                              <Button fx:id="btnSaveEditStudent" mnemonicParsing="false" onAction="#handleEditStudent" prefHeight="65.0" prefWidth="95.0" text="Save Edit" />
+                              <Button fx:id="btnNextStudent" mnemonicParsing="false" onAction="#handleNextStudent" prefHeight="65.0" prefWidth="95.0" text="Next" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <center>
+                        <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox fx:id="vboxAssign" alignment="CENTER" layoutX="75.0" layoutY="14.0" prefHeight="268.0" prefWidth="175.2" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="Redemption Code" />
+                                          <TextField fx:id="txtCodeAssign" />
+                                          <Button fx:id="btnCodeAssign" mnemonicParsing="false" onAction="#handleCodeAssign" text="Assign Code" />
+                                          <Button fx:id="btnCodeUnassign" mnemonicParsing="false" onAction="#handleCodeUnassign" text="Unassign Code" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="72.0" layoutY="24.0" prefHeight="268.0" prefWidth="417.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="First Name" />
+                                          <TextField fx:id="txtFirstName" />
+                                          <Label text="Last Name" />
+                                          <TextField fx:id="txtLastName" />
+                                          <Label text="Student ID Number" />
+                                          <TextField fx:id="txtStudentID" />
+                                          <Label text="Grade" />
+                                          <ChoiceBox fx:id="chbxGrade" prefWidth="150.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tabCodeEdit" closable="false" onSelectionChanged="#handleCodeView" text="Redemption Code Edit">
+      <content>
+            <BorderPane>
+               <bottom>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnPreviousCode" mnemonicParsing="false" onAction="#handlePreviousCode" prefHeight="65.0" prefWidth="95.0" text="Previous" />
+                        <Button fx:id="btnNewCode" mnemonicParsing="false" onAction="#handleNewCode" prefHeight="65.0" prefWidth="95.0" text="New" />
+                        <Button fx:id="btnDeleteCode" mnemonicParsing="false" onAction="#handleDeleteCode" prefHeight="65.0" prefWidth="95.0" text="Delete" />
+                        <Button fx:id="btnSaveCode" mnemonicParsing="false" onAction="#handleSaveRedemptionCode" prefHeight="65.0" prefWidth="95.0" text="Save" />
+                        <Button fx:id="btnSaveEditCode" alignment="CENTER" mnemonicParsing="false" onAction="#handleEditRedemptionCode" prefHeight="65.0" prefWidth="95.0" text="Save Edit" textAlignment="CENTER" />
+                        <Button fx:id="btnNextCode" mnemonicParsing="false" onAction="#handleNextCode" prefHeight="65.0" prefWidth="95.0" text="Next" />
+                     </children></HBox>
+               </bottom>
+               <center>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Redemption Code" />
+                        <TextField fx:id="txtCode" />
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+      </content>
+    </Tab>
+      <Tab fx:id="tabReport" onSelectionChanged="#handleReportView" text="Report View">
+        <content>
+          <AnchorPane fx:id="root" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane layoutX="176.0" layoutY="58.0" prefHeight="369.6" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <bottom>
+                        <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="hboxSearch" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="491.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="58.0" prefWidth="132.0">
+                                       <children>
+                                          <Label text="Show All or Search By" />
+                                          <RadioButton fx:id="radbtnCode" mnemonicParsing="false" onAction="#handleSearchByCode" text="Redemption Codes">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="group" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="radbtnID" mnemonicParsing="false" onAction="#handleSearchByStudent" text="Student IDs" toggleGroup="$group" />
+                                       </children>
+                                    </VBox>
+                                    <TextField fx:id="txtSearch" />
+                                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
+                                    <Button fx:id="btnAll" mnemonicParsing="false" onAction="#handleShowAll" text="Show All" />
+                                 </children></HBox>
+                              <HBox fx:id="hboxReportInc" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="300.0" spacing="20.0">
+                                 <children>
+                                    <Button fx:id="btnPreviousView" mnemonicParsing="false" onAction="#handlePreviousReport" text="Previous" />
+                                    <Button fx:id="btnNextView" mnemonicParsing="false" onAction="#handleNextReport" text="Next" />
+                                    <Separator orientation="VERTICAL" prefHeight="200.0" scaleShape="false" visible="false" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <center>
+                        <ListView fx:id="listReport" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        	<CellLayoutReport />
+                        </ListView>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

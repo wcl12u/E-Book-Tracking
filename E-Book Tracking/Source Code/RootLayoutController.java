@@ -119,7 +119,7 @@ public class RootLayoutController {
 	//Method Called on Program Startup
 
 	public void initialize() {
-		
+
 		listReport.widthProperty().addListener(new ChangeListener<Number>() {
 			@Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
 				handleReportView();
@@ -130,9 +130,11 @@ public class RootLayoutController {
 				handleReportView();
 			}
 		});
-		
+
 		readStudent();
 		readCodes();
+
+		btnAll.setText("End Search");
 
 		root.getChildren();
 
@@ -353,6 +355,9 @@ public class RootLayoutController {
 				showList.add(temp);
 			}
 		}
+		if(!reportClick) {
+			showIndex = studentIndex;
+		}
 		if(showList.size() != 0 && !showList.get(showIndex).getCode().equals("None")) {
 			for(CellLayoutReport element: codeList) {
 				if(element.getCode().equals(showList.get(showIndex).getCode())) {
@@ -373,11 +378,14 @@ public class RootLayoutController {
 			handleReportView();
 		}
 	}
-	
+
 	public void handleSearchByCode() {
 		showList.clear();
 		for(CellLayoutReport element: codeList) {
 			showList.add(element);
+		}
+		if(!reportClick) {
+			showIndex = codeIndex;
 		}
 		if(showList.size() != 0 && !showList.get(showIndex).getStudentID().equals("No Student Assigned")) {
 			for(Student element: studentList) {
@@ -633,6 +641,7 @@ public class RootLayoutController {
 			btnSaveEditStudent.setDisable(false);
 			btnDeleteStudent.setDisable(false);
 			vboxAssign.setDisable(false);
+			txtCodeAssign.setDisable(false);
 			btnCodeAssign.setDisable(false);
 			btnCodeUnassign.setDisable(true);
 			studentIndex = studentList.size()-1;
@@ -661,12 +670,17 @@ public class RootLayoutController {
 			filled = false;
 		}
 
-		if(stringSafetyCheck(txtStudentID) == true) {
-			student.setStudentID(txtStudentID.getText());
-			txtStudentID.setPromptText(null);
+		if(!txtStudentID.isDisabled()) {
+			if(stringSafetyCheck(txtStudentID) == true) {
+				student.setStudentID(txtStudentID.getText());
+				txtStudentID.setPromptText(null);
+			}
+			else {
+				filled = false;
+			}
 		}
 		else {
-			filled = false;
+			student.setStudentID(studentList.get(studentIndex).getStudentID());
 		}
 
 		if(choiceSafetyCheck(chbxGrade) == true) {

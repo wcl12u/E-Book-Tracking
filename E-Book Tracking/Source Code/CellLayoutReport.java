@@ -86,6 +86,7 @@ public class CellLayoutReport extends Pane {
 			controller.lblGradeHead.setFont(fontSize);
 			controller.lblCodeHead.setFont(fontSize);
 			controller.lblStudentHead.setStyle("-fx-font-weight: bold; -fx-font-size: " + size2 + ";");
+			controller.lblRedemHead.setText("Code Information\nfor this Student");
 			controller.lblRedemHead.setStyle("-fx-font-weight: bold; -fx-font-size: " + size2 + ";");
 		}
 		else {

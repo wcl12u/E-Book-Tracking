@@ -19,7 +19,7 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RootLayoutController">
   <tabs>
-    <Tab fx:id="tabStudentEdit" closable="false" onSelectionChanged="#handleStudentView" text="Student Edit">
+    <Tab fx:id="tabStudentEdit" closable="false" onSelectionChanged="#handleStudentView" style="-fx-background-color: #ced9ff;" text="Student Edit">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -41,7 +41,7 @@
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
-                                    <VBox fx:id="vboxAssign" alignment="CENTER" layoutX="75.0" layoutY="14.0" prefHeight="268.0" prefWidth="175.2" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox fx:id="vboxAssign" alignment="CENTER" layoutX="75.0" layoutY="14.0" prefHeight="268.0" prefWidth="175.2" spacing="15.0" style="-fx-background-color: #e8edff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Label text="Redemption Code" />
                                           <TextField fx:id="txtCodeAssign" />
@@ -51,7 +51,7 @@
                                     </VBox>
                                  </children>
                               </AnchorPane>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #e8edff;">
                                  <children>
                                     <VBox alignment="CENTER" layoutX="72.0" layoutY="24.0" prefHeight="268.0" prefWidth="417.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
@@ -74,7 +74,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab fx:id="tabCodeEdit" closable="false" onSelectionChanged="#handleCodeView" text="Redemption Code Edit">
+    <Tab fx:id="tabCodeEdit" closable="false" onSelectionChanged="#handleCodeView" style="-fx-background-color: #d8ffdf;" text="Redemption Code Edit">
       <content>
             <BorderPane>
                <bottom>
@@ -89,7 +89,7 @@
                      </children></HBox>
                </bottom>
                <center>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #d8ffdf;" BorderPane.alignment="CENTER">
                      <children>
                         <Label text="Redemption Code" />
                         <TextField fx:id="txtCode" />
@@ -99,7 +99,7 @@
             </BorderPane>
       </content>
     </Tab>
-      <Tab fx:id="tabReport" onSelectionChanged="#handleReportView" text="Report View">
+      <Tab fx:id="tabReport" closable="false" onSelectionChanged="#handleReportView" style="-fx-background-color: #ffecd8;" text="Report View">
         <content>
           <AnchorPane fx:id="root" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -120,9 +120,9 @@
                                           <RadioButton fx:id="radbtnID" mnemonicParsing="false" onAction="#handleSearchByStudent" text="Student IDs" toggleGroup="$group" />
                                        </children>
                                     </VBox>
-                                    <TextField fx:id="txtSearch" />
-                                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
-                                    <Button fx:id="btnAll" mnemonicParsing="false" onAction="#handleShowAll" text="Show All" />
+                                    <TextField fx:id="txtSearch" prefHeight="26.0" prefWidth="134.0" />
+                                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#handleSearch" prefHeight="26.0" prefWidth="62.0" text="Search" />
+                                    <Button fx:id="btnAll" mnemonicParsing="false" onAction="#handleShowAll" prefHeight="26.0" prefWidth="89.0" text="Show All" />
                                  </children></HBox>
                               <HBox fx:id="hboxReportInc" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="300.0" spacing="20.0">
                                  <children>
